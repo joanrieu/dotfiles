@@ -1,0 +1,23 @@
+"mpc toggle"
+    XF86AudioPlay
+
+"mpc stop"
+    Control + XF86AudioPlay
+
+"mpc prev"
+    XF86AudioPrev
+
+"mpc next"
+    XF86AudioNext
+
+"amixer set Surround toggle"
+    XF86AudioMute
+
+"amixer set Surround off"
+    Control + XF86AudioMute
+
+"amixer set Surround 4%+"
+    XF86AudioRaiseVolume
+
+"amixer set Surround 4%-"
+    XF86AudioLowerVolume
