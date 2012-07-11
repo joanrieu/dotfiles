@@ -27,14 +27,11 @@ function mkemptyfile {
 }
 
 function stream {(
+  . ~/.config/twitch.tv
   while : ; do
-    ffmpeg -f x11grab -s hd1080 -i :0 -f flv rtmp://live.justin.tv/app/live_28539994_rdXM4z5vzbUdqxAlKWC6xbqsPUwaiP -v quiet
+    ffmpeg -f x11grab -s hd1080 -i :0 -f flv rtmp://live.justin.tv/app/$key -v quiet
   done
 )}
-
-function streamstop {
-  kill -HUP $(cat .streampid) && rm .streampid
-}
 
 function pacman-not-owned-files {
   ( find / -not -type d ; (pacman -Qql | egrep -v '/$') ) | sort | uniq -u | egrep -v '^/(home|sys|proc|dev)' | less
