@@ -2,13 +2,13 @@ source /etc/profile
 
 export EDITOR=vim
 
+# Check for an interactive session
+[ -z "$PS1" ] && return
+
 export CC="clang"
 export CXX="clang++"
 export CXXFLAGS="-std=c++11 -ggdb"
 export LD_LIBRARY_PATH="."
-
-# Check for an interactive session
-[ -z "$PS1" ] && return
 
 eval $(dircolors -b)
 alias ls='ls --color=auto'

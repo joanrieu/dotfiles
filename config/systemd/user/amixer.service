@@ -1,0 +1,10 @@
+[Unit]
+Description=Sound Card Volume
+Before=sound.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/amixer -- set Surround -21dB off
+
+[Install]
+WantedBy=sound.target

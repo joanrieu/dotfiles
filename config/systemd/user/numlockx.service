@@ -1,0 +1,9 @@
+[Unit]
+Description=Keyboard NumLock
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/numlockx
+
+[Install]
+WantedBy=default.target
