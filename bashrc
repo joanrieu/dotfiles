@@ -16,7 +16,6 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias dir='ls -lha'
 
-alias qemu-kvm='qemu-system-x86_64 -enable-kvm -m 1024'
 alias owl='LANG=C owl'
 
 function mkcd {
