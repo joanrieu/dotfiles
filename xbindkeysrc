@@ -1,3 +1,15 @@
+"systemctl --user exit"
+  Alt + Shift + Q
+
+"roxterm"
+  Alt + Return
+
+"session="$(tmux list-sessions | dmenu | awk -F: '{ print $1 }')" && [[ ! -z "$session" ]] && roxterm -e tmux attach-session -t "$session""
+  Alt + Shift + Return
+
+"dmenu_run"
+  Alt + D
+
 "mpc toggle"
   XF86AudioPlay
 

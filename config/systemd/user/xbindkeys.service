@@ -1,0 +1,9 @@
+[Unit]
+Description=Xbindkeys
+
+[Service]
+ExecStart=/usr/bin/xbindkeys --nodaemon
+KillMode=process
+
+[Install]
+WantedBy=default.target
