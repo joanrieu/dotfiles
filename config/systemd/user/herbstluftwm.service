@@ -1,0 +1,8 @@
+[Unit]
+Description=Herbstluft Window Manager
+
+[Service]
+ExecStart=/usr/bin/herbstluftwm
+
+[Install]
+WantedBy=default.target
