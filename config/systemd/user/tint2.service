@@ -1,0 +1,8 @@
+[Unit]
+Description=tint2 panel/taskbar
+
+[Service]
+ExecStart=/usr/bin/tint2
+
+[Install]
+WantedBy=default.target
