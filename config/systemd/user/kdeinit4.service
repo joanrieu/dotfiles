@@ -1,0 +1,9 @@
+[Unit]
+Description=KDE Init
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/kdeinit4
+
+[Install]
+WantedBy=default.target

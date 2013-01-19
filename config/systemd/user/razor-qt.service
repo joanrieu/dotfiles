@@ -1,0 +1,8 @@
+[Unit]
+Description=Razor-qt Desktop Environmnent
+
+[Service]
+ExecStart=/usr/bin/startrazor
+
+[Install]
+WantedBy=default.target

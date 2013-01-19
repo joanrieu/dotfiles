@@ -1,0 +1,8 @@
+[Unit]
+Description=Enlightenment Window Manager
+
+[Service]
+ExecStart=/usr/bin/enlightenment_start
+
+[Install]
+WantedBy=default.target
