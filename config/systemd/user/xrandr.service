@@ -1,0 +1,9 @@
+[Unit]
+Description=XRandR settings
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/xrandr --output DVI-1 --right-of DVI-0
+
+[Install]
+WantedBy=default.target
