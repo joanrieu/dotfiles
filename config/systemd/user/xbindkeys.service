@@ -2,7 +2,8 @@
 Description=Xbindkeys
 
 [Service]
-ExecStart=/usr/bin/xbindkeys --nodaemon
+ExecStart=/usr/bin/xbindkeys
+Type=forking
 KillMode=process
 
 [Install]
