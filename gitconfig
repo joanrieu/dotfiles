@@ -1,5 +1,7 @@
 [user]
 	name = Joan Rieu
-	email = toto_pirate@hotmail.fr
+	email = joan.rieu@gmail.com
 [core]
 	editor = vim
+[push]
+	default = simple
