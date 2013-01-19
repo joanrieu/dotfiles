@@ -1,6 +1,3 @@
-# Write your default config options here!
-
-ao=alsa:device=hw=0.0,
 vo=xv,
 softvol=1
 prefer-ipv4=1
