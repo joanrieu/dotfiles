@@ -4,7 +4,7 @@
 "termite"
   Alt + Return
 
-"session="$(tmux list-sessions | dmenu | awk -F: '{ print $1 }')" && [[ ! -z "$session" ]] && termite -e tmux attach-session -t "$session""
+"tmux list-sessions | dmenu | egrep -o ^[0-9]+ | xargs echo tmux attach-session -t | xargs -0 termite -e"
   Alt + Shift + Return
 
 "dmenu_run"
