@@ -4,7 +4,7 @@ export EDITOR=vim
 
 # Check for an interactive session
 [ -z "$PS1" ] && return
-[[ "$TERM" == "xterm" ]] && cd && exec tmux
+[[ "$TERM" == "xterm-termite" ]] && cd && exec tmux
 
 export CC="clang"
 export CXX="clang++"

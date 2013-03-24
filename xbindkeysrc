@@ -1,10 +1,10 @@
 "systemctl --user exit"
   Alt + Shift + E
 
-"roxterm"
+"termite"
   Alt + Return
 
-"session="$(tmux list-sessions | dmenu | awk -F: '{ print $1 }')" && [[ ! -z "$session" ]] && roxterm -e tmux attach-session -t "$session""
+"session="$(tmux list-sessions | dmenu | awk -F: '{ print $1 }')" && [[ ! -z "$session" ]] && termite -e tmux attach-session -t "$session""
   Alt + Shift + Return
 
 "dmenu_run"
