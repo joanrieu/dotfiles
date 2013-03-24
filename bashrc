@@ -23,17 +23,6 @@ function mkcd {
   mkdir "$@" && cd "$@"
 }
 
-function mkemptyfile {
-  : | dd count=1 seek=1 "of=$1" "bs=$2" &>/dev/null
-}
-
-function stream {(
-  . ~/.config/twitch.tv
-  while : ; do
-    ffmpeg -f x11grab -s hd1080 -i :0 -f flv rtmp://live.justin.tv/app/$key -v quiet
-  done
-)}
-
 function pacman-not-owned-files {
   ( find / -not -type d ; (pacman -Qql | egrep -v '/$') ) | sort | uniq -u | egrep -v '^/(home|sys|proc|dev)' | less
 }
