@@ -1,10 +1,11 @@
 source /etc/profile
 
 export EDITOR=vim
+export BROWSER=firefox
 
 # Check for an interactive session
 [ -z "$PS1" ] && return
-[[ "$TERM" == "xterm-termite" ]] && cd && exec tmux
+case "$TERM" in xterm*) exec tmux;; esac
 
 export CC="clang"
 export CXX="clang++"
