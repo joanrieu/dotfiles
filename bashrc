@@ -1,7 +1,7 @@
 source /etc/profile
 
 export EDITOR=vim
-export BROWSER=firefox
+export BROWSER=chromium
 
 # Check for an interactive session
 [ -z "$PS1" ] && return
