@@ -1,8 +1,0 @@
-[Unit]
-Description=Compiz Window Manager
-
-[Service]
-ExecStart=/usr/bin/compiz ccp
-
-[Install]
-WantedBy=default.target
