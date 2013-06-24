@@ -10,16 +10,22 @@
 "dmenu_run"
   Alt + D
 
-"mpc toggle"
+"systemctl --user is-active tint2 && systemctl --user stop tint2 || systemctl --user start tint2"
+  Alt + Pause
+
+"setxkbmap $(setxkbmap -query |awk -F: -e '/layout: +fr/ { print "us" } /layout: +us/ { print "fr" }')"
+  Alt + Shift + Pause
+
+"ncmpcpp toggle"
   XF86AudioPlay
 
-"mpc stop"
+"ncmpcpp stop"
   Control + XF86AudioPlay
 
-"mpc prev"
+"ncmpcpp prev"
   XF86AudioPrev
 
-"mpc next"
+"ncmpcpp next"
   XF86AudioNext
 
 "amixer set Surround toggle"
