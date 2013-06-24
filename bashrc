@@ -18,7 +18,7 @@ alias grep='grep --color=auto'
 alias dir='ls -lha'
 alias rm='rm -I'
 
-alias owl='LANG=C owl'
+alias chat='exec tmux attach-session -t 0'
 
 function mkcd {
   mkdir "$@" && cd "$@"
