@@ -39,6 +39,6 @@ function pacman-clean-explicits {
 }
 
 # Set up prompt
-PS1='\[\e[0;31m\] \\ [\w]\n / \[\e[0m\]\$ '
+PS1='\[\e[0;34m\] \\ [\w]\n / \[\e[0m\]\$ '
 
 fortune -a
