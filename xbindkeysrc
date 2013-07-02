@@ -28,6 +28,12 @@
 "ncmpcpp next"
   XF86AudioNext
 
+"ncmpcpp volume +50"
+  Control + XF86AudioRaiseVolume
+
+"ncmpcpp volume -50"
+  Control + XF86AudioLowerVolume
+
 "amixer set Surround toggle"
   XF86AudioMute
 
