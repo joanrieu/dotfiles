@@ -105,5 +105,5 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 
 # multi monitor
 hc detect_monitors
-hc pad 0 "" "" 30 ""
-hc pad 1 "" "" 30 ""
+hc pad 0 "" "" 25 ""
+hc pad 1 "" "" 25 ""
