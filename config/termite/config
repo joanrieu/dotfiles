@@ -26,9 +26,9 @@ cursor_blink = system
 cursor_shape = block
 
 [colors]
-foreground = #202426
+foreground = #C2C0C2
 foreground_bold = #ffffff
-background = #C2C0C2
+background = #202426
 
 # colors from color0 to color254 can be set
 # https://bbs.archlinux.org/viewtopic.php?pid=652697#p652697
