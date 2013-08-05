@@ -34,14 +34,14 @@
 "ncmpcpp volume -50"
   Control + XF86AudioLowerVolume
 
-"amixer set Surround toggle"
+"~/.config/pulse/switch-sink.sh"
   XF86AudioMute
 
-"amixer set Surround off"
+"[[ $(pacmd stat |awk -F': ' '$1 == "Default sink name" { print $2 }') == 'headphones' ]] || ~/.config/pulse/switch-sink.sh"
   Control + XF86AudioMute
 
-"amixer set Surround 4%+"
+"~/.config/pulse/set-volume-relative.sh +4"
   XF86AudioRaiseVolume
 
-"amixer set Surround 4%-"
+"~/.config/pulse/set-volume-relative.sh -4"
   XF86AudioLowerVolume
