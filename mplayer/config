@@ -1,3 +1,4 @@
 vo=xv,
+ao=pulse,
 softvol=1
 prefer-ipv4=1
