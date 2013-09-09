@@ -7,6 +7,8 @@ set nowb
 set noswapfile
 
 " Enable indentation
+set tabstop=2
+set shiftwidth=2
 set expandtab
 set smarttab
 set autoindent
@@ -20,3 +22,6 @@ set so=10
 
 " Enable mouse
 set mouse=a
+
+" Avoid the escape key
+imap jj <Esc>
