@@ -3,6 +3,7 @@ Description=XRandR settings
 
 [Service]
 Type=oneshot
+ExecStart=/usr/bin/xrandr --output DVI-0 --off --output DVI-1 --off
 ExecStart=/usr/bin/xrandr --output DVI-0 --auto --output DVI-1 --auto --right-of DVI-0
 
 [Install]
