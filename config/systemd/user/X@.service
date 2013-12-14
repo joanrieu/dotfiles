@@ -1,0 +1,8 @@
+[Unit]
+Description=X
+
+[Service]
+Type=forking
+ExecStart=/bin/test -s /run/user/%U/xsession.pid
+KillSignal=SIGCONT
+PIDFile=/run/user/%U/xsession.pid

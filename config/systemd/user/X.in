@@ -1,2 +1,8 @@
+[Unit]
+Requires=X@.service
+
 [Service]
 Environment=DISPLAY=%I
+
+[Install]
+WantedBy=graphical@.target
