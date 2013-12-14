@@ -1,5 +1,6 @@
 " Enable syntax highlighting
 syntax enable
+colorscheme molokai
 
 " Disable backup
 set nobackup
