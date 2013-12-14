@@ -1,0 +1,8 @@
+.include X.in
+
+[Unit]
+Description=Xbindkeys
+
+[Service]
+ExecStart=/usr/bin/xbindkeys -n
+KillMode=process

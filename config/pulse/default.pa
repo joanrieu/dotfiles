@@ -1,6 +1,6 @@
-load-module module-systemd-login
-load-module module-suspend-on-idle
 load-module module-native-protocol-unix
+
+load-module module-suspend-on-idle
 
 load-module module-filter-heuristics
 load-module module-filter-apply

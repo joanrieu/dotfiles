@@ -1,0 +1,9 @@
+[Unit]
+Description=X
+Wants=xrandr@.service
+Wants=nitrogen@.service
+Wants=herbstluftwm@.service
+Wants=tint2@.service
+Wants=xbindkeys@.service
+Wants=numlockx@.service
+Wants=kdeinit4@.service

@@ -1,4 +1,4 @@
-"systemctl --user exit"
+"systemctl --user stop X@${DISPLAY}.target"
   Alt + Shift + E
 
 "termite"
@@ -10,7 +10,7 @@
 "dmenu_run"
   Alt + D
 
-"systemctl --user is-active tint2 && systemctl --user stop tint2 || systemctl --user start tint2"
+"systemctl --user is-active tint2@${DISPLAY} && systemctl --user stop tint2@${DISPLAY} || systemctl --user start tint2@${DISPLAY}"
   Alt + Pause
 
 "setxkbmap $(setxkbmap -query |awk -F: -e '/layout: +fr/ { print "us" } /layout: +us/ { print "fr" }')"
@@ -37,7 +37,7 @@
 "~/.config/pulse/switch-sink.sh"
   XF86AudioMute
 
-"[[ $(pacmd stat |awk -F': ' '$1 == "Default sink name" { print $2 }') == 'headphones' ]] || ~/.config/pulse/switch-sink.sh"
+"[[ $(pacmd stat | awk -F': ' '$1 == "Default sink name" { print $2 }' ) == 'headphones' ]] || ~/.config/pulse/switch-sink.sh"
   Control + XF86AudioMute
 
 "~/.config/pulse/set-volume-relative.sh +4"
