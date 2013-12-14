@@ -25,3 +25,6 @@ set mouse=a
 
 " Avoid the escape key
 imap jj <Esc>
+
+" Add an alternative to Ctrl-W
+map <Tab> <C-W>
