@@ -15,6 +15,33 @@ hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
 
+function kb() {
+  key=$1
+  shift
+  hc keybind $key spawn ~/.config/keybindings.sh $*
+}
+
+kb $Mod-Shift-e logout
+
+kb $Mod-Return shell
+kb $Mod-Shift-Return shell_attach
+
+kb $Mod-d launcher
+kb $Mod-Pause taskbar_toggle
+kb $Mod-Shift-Pause keyboard_layout_toggle
+
+kb XF86AudioPlay music_playpause
+kb Control-XF86AudioPlay music_stop
+kb XF86AudioNext music_next
+kb XF86AudioPrev music_prev
+kb Control-XF86AudioRaiseVolume music_raise
+kb Control-XF86AudioLowerVolume music_lower
+
+kb XF86AudioRaiseVolume audio_raise
+kb XF86AudioLowerVolume audio_lower
+kb XF86AudioMute audio_output_toggle
+kb Control-XF86AudioMute audio_output_headphones
+
 # tags
 TAG_NAMES=( {1..9} )
 TAG_KEYS=( ampersand eacute quotedbl apostrophe parenleft minus egrave underscore ccedilla agrave )

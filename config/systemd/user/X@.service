@@ -3,6 +3,6 @@ Description=X
 
 [Service]
 Type=forking
-ExecStart=/bin/test -s /run/user/%U/xsession.pid
+ExecStart=/bin/test -e /run/user/%U/X11-display
 KillSignal=SIGCONT
 PIDFile=/run/user/%U/xsession.pid
