@@ -16,7 +16,7 @@ search_wrap = true
 #geometry = 640x480
 
 # 0.0: opaque, 1.0: transparent
-transparency = .63
+transparency = 1
 pseudo_transparency = true
 
 # "system", "on" or "off"
