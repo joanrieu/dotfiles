@@ -18,14 +18,12 @@ alias grep='grep --color=auto'
 alias dir='ls -lha'
 alias rm='rm -I'
 
-alias chat='exec tmux attach-session -t 0'
-
 function mkcd {
   mkdir "$@" && cd "$@"
 }
 
 function pacman-not-owned-files {
-  ( find / -not -type d ; (pacman -Qql | egrep -v '/$') ) | sort | uniq -u | egrep -v '^/(home|sys|proc|dev)' | less
+  ( sudo find / -not -type d ; (pacman -Qql | egrep -v '/$') ) | sort | uniq -u | egrep -v '^/(home|sys|proc|dev)' | less
 }
 
 function pacman-clean-explicits {
