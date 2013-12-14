@@ -3,5 +3,5 @@
 	email = joan.rieu@gmail.com
 [core]
 	editor = vim
-[push]
-	default = simple
+[alias]
+  l = log --oneline --graph --decorate --all
