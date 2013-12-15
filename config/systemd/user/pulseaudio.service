@@ -2,7 +2,6 @@
 Description=PulseAudio
 
 [Service]
-Type=dbus
 BusName=org.pulseaudio.Server
 ExecStart=/usr/bin/pulseaudio
 Restart=always

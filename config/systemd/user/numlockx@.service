@@ -1,8 +1,11 @@
-.include X.in
-
 [Unit]
 Description=Keyboard NumLock
+Requires=X@.service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/numlockx
+Environment=DISPLAY=%I
+
+[Install]
+WantedBy=graphical@.target

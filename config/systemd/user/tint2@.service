@@ -1,7 +1,12 @@
-.include X.in
-
 [Unit]
 Description=tint2 panel/taskbar
+Requires=X@.service
+Wants=X-window-manager@.service
+After=X-window-manager@.service
 
 [Service]
 ExecStart=/usr/bin/tint2
+Environment=DISPLAY=%I
+
+[Install]
+WantedBy=graphical@.target

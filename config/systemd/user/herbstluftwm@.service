@@ -1,7 +1,15 @@
-.include X.in
-
 [Unit]
 Description=Herbstluft Window Manager
+Requires=X@.service
+After=X@.service
 
 [Service]
+Type=notify
 ExecStart=/usr/bin/herbstluftwm
+ExecReload=/usr/bin/herbstclient reload
+ExecStop=/usr/bin/herbstclient quit
+Environment=DISPLAY=%I
+NotifyAccess=all
+
+[Install]
+Alias=X-window-manager@.service

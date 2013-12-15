@@ -1,10 +1,12 @@
 [Unit]
 Description=Stream Video to Twitch.tv
+Requires=X@.service
 
 [Service]
-EnvironmentFile=/home/joan/.config/twitch.key
 ExecStart=/usr/bin/ffmpeg -f x11grab -s hd1080 -i :0 -f flv rtmp://live.justin.tv/app/${KEY} -v quiet
 Restart=always
+Environment=DISPLAY=%I
+EnvironmentFile=/home/joan/.config/twitch.key
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical@.target

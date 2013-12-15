@@ -112,6 +112,7 @@ hc set swap_monitors_to_get_tag 0
 hc set default_frame_layout 3
 # rules
 hc unrule -F
+hc rule focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 
@@ -124,3 +125,5 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 hc detect_monitors
 hc pad 0 "" "" 25 ""
 hc pad 1 "" "" 25 ""
+
+systemd-notify --ready

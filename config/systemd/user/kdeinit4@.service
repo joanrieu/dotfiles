@@ -1,8 +1,11 @@
-.include X.in
-
 [Unit]
-Description=KDE Init
+Description=KDE Services
+Requires=X@.service
 
 [Service]
 Type=forking
 ExecStart=/usr/bin/kdeinit4
+Environment=DISPLAY=%I
+
+[Install]
+WantedBy=graphical@.target

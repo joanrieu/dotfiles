@@ -1,8 +1,12 @@
-.include X.in
-
 [Unit]
 Description=Nitrogen Wallpaper
+Requires=X@.service
+Before=X-window-manager@.service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/nitrogen --restore
+Environment=DISPLAY=%I
+
+[Install]
+WantedBy=graphical@.target
