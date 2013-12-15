@@ -3,9 +3,8 @@ source /etc/profile
 export EDITOR=vim
 export BROWSER=chromium
 
-# Check for an interactive session
 [ -z "$PS1" ] && return
-case "$TERM" in xterm*) exec tmux;; esac
+[ -z "$TMUX" ] && exec tmux
 
 export CC="clang"
 export CXX="clang++"
