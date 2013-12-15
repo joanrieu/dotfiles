@@ -1,0 +1,8 @@
+.include X.in
+
+[Unit]
+Description=Chromium
+
+[Service]
+ExecStart=/usr/bin/chromium --no-startup-window
+Restart=always
