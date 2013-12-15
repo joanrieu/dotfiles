@@ -1,8 +1,0 @@
-[Unit]
-Description=Subtle Window Manager
-
-[Service]
-ExecStart=/usr/bin/subtle
-
-[Install]
-WantedBy=default.target
