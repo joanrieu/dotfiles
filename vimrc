@@ -26,10 +26,14 @@ Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-fugitive'
 " Git repository explorer
 Bundle 'gregsexton/gitv'
+" Quickfix and diff in the gutter
+Bundle 'mhinz/vim-signify'
 " Color scheme
 Bundle 'molokai'
 " Colored parentheses
 Bundle 'kien/rainbow_parentheses.vim'
+" Status bar
+Bundle 'bling/vim-airline'
 
 " Editor
 syntax enable
@@ -38,13 +42,15 @@ let g:UltiSnips = {}
 let g:UltiSnips.ExpandTrigger = '@'
 let g:UltiSnips.always_use_first_snippet = 1
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/ycm_extra_conf.py'
+set mouse=a
 
 " Display
 set lazyredraw
-set mouse=a
 set laststatus=2
 set scrolloff=10
 colorscheme molokai
+let g:airline_theme = 'simple'
+set timeout timeoutlen=400 ttimeoutlen=100
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
