@@ -35,15 +35,6 @@ Bundle 'kien/rainbow_parentheses.vim'
 " Status bar
 Bundle 'bling/vim-airline'
 
-" Editor
-syntax enable
-filetype plugin on
-let g:UltiSnips = {}
-let g:UltiSnips.ExpandTrigger = '@'
-let g:UltiSnips.always_use_first_snippet = 1
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/ycm_extra_conf.py'
-set mouse=a
-
 " Display
 set lazyredraw
 set laststatus=2
@@ -56,6 +47,15 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 au Syntax * RainbowParenthesesLoadChevrons
+
+" Editor
+syntax enable
+filetype plugin on
+let g:UltiSnips = {}
+let g:UltiSnips.ExpandTrigger = '@'
+let g:UltiSnips.always_use_first_snippet = 1
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/ycm_extra_conf.py'
+set mouse=a
 
 " Indentation
 set tabstop=2
