@@ -1,15 +1,15 @@
 source /etc/profile
 
-export EDITOR=vim
-export BROWSER=chromium
-
-[ -z "$PS1" ] && return
-[ -z "$TMUX" ] && exec tmux
+export EDITOR="vim"
+export BROWSER="chromium"
 
 export CC="clang"
 export CXX="clang++"
 export CXXFLAGS="-std=c++11 -ggdb"
 export LD_LIBRARY_PATH="."
+
+[ -z "$PS1" ] && return
+[ -z "$TMUX" ] && exec tmux new-session
 
 eval $(dircolors -b)
 alias ls='ls --color=auto'
