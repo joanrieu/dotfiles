@@ -16,7 +16,7 @@ search_wrap = true
 #geometry = 640x480
 
 # 0.0: opaque, 1.0: transparent
-transparency = 1
+transparency = 0.3
 pseudo_transparency = true
 
 # "system", "on" or "off"
@@ -25,45 +25,26 @@ cursor_blink = system
 # "block", "underline" or "ibeam"
 cursor_shape = block
 
+# monokai theme
 [colors]
-foreground = #C2C0C2
-foreground_bold = #ffffff
-background = #202426
-
-# colors from color0 to color254 can be set
-# https://bbs.archlinux.org/viewtopic.php?pid=652697#p652697
-#~ color0 = #222222
-#~ color8 = #454545
-#~ color1 = #9E5641
-#~ color9 = #CC896D
-#~ color2 = #6C7E55
-#~ color10 = #C4DF90
-#~ color3 = #CAAF2B
-#~ color11 = #FFE080
-#~ color4 = #7FB8D8
-#~ color12 = #B8DDEA
-#~ color5 = #956D9D
-#~ color13 = #C18FCB
-#~ color6 = #4c8ea1
-#~ color14 = #6bc1d0
-#~ color7 = #808080
-#~ color15 = #cdcdcd
-# https://bbs.archlinux.org/viewtopic.php?pid=653359#p653359
-color0 = #202426
-color8 = #555753
-color1 = #B80000
-color9 = #E62727
-color2 = #046624
-color10 = #23994A
-color3 = #804400
-color11 = #D77200
-color4 = #193B6B
-color12 = #547599
-color5 = #5C3F61
-color13 = #946D90
-color6 = #036466
-color14 = #059799
-color7 = #D7D4D7
-color15 = #EBE8EB
+foreground = #F6F5EE
+foreground_bold = #61B8D0
+background = #1D1D19
+color0 = #1C1D19
+color1 = #D01B24
+color2 = #A7D32C
+color3 = #D8CF67
+color4 = #61B8D0
+color5 = #695ABB
+color6 = #D53864
+color7 = #FEFFFE
+color8 = #1C1D19
+color9 = #D12A24
+color10 = #A7D32C
+color11 = #D8CF67
+color12 = #61B8D0
+color13 = #695ABB
+color14 = #D53864
+color15 = #FEFFFE
 
 # vim: ft=dosini
