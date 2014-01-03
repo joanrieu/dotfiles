@@ -128,4 +128,8 @@ do
   hc pad $i "" "" 25 ""
 done
 
-systemd-notify --ready
+# ready
+for i in $(seq 1 1000)
+do
+  systemd-notify --ready
+done
