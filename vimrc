@@ -66,7 +66,6 @@ set autoindent
 set smartindent
 
 " Mappings
-let mapleader = ' '
 imap jj <Esc>
 map <Tab> <C-W>
-cmap w!! w !sudo tee % >/dev/null
+cmap W w !sudo tee % >/dev/null
