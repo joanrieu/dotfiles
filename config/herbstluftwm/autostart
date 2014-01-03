@@ -116,9 +116,6 @@ hc rule focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 
-# unlock, just to be sure
-hc unlock
-
 herbstclient set tree_style '╾│ ├└╼─┐'
 
 # multi monitor
@@ -129,6 +126,7 @@ do
 done
 
 # ready
+hc unlock
 for i in $(seq 1 1000)
 do
   systemd-notify --ready

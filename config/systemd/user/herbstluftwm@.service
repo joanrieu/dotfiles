@@ -5,7 +5,7 @@ After=X@.service
 
 [Service]
 Type=notify
-ExecStart=/usr/bin/herbstluftwm
+ExecStart=/usr/bin/herbstluftwm --locked
 ExecReload=/usr/bin/herbstclient reload
 ExecStop=/usr/bin/herbstclient quit
 Environment=DISPLAY=%I
