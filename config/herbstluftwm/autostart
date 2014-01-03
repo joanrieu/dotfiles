@@ -120,7 +120,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 
 # multi monitor
 hc detect_monitors
-for i in $(seq 1 $(hc list_monitors | wc -l))
+for i in $(seq 0 $(($(hc list_monitors | wc -l)-1)))
 do
   hc pad $i "" "" 25 ""
 done
