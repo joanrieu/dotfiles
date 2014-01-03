@@ -1,7 +1,7 @@
 [Unit]
 Description=X
 ConditionPathExists=/run/user/%U/X11-display
-Wants=window-manager@.service
+Wants=X-window-manager@.service
 
 [Service]
 Type=forking
