@@ -1,14 +1,6 @@
 source /etc/profile
 
-export EDITOR="vim"
-export BROWSER="chromium"
-
-export CC="clang"
-export CXX="clang++"
-export CXXFLAGS="-std=c++11 -ggdb"
-export LD_LIBRARY_PATH="."
-
-[ -z "$PS1" ] && return
+[ -z "$PS1" ] && return || PS1='\[\e[0;34m\] \\ [\w]\n / \[\e[0m\]\$ '
 [ -z "$TMUX" ] && exec tmux new-session
 
 eval $(dircolors -b)
@@ -28,14 +20,12 @@ function pacman-not-owned-files {
 function pacman-clean-explicits {
   explicits=$(comm -23 <(pacman -Qqe | sort) <(pacman -Sqg base base-devel | sort))
   unneeded=$(LC_ALL=C pacman -Qi $explicits |sed -nre 's/^Name +: (.+)$/\1/p' -e 's/^Description +: (.+)$/\1\noff/p' |xargs -d"\n" dialog --checklist "Select unneeded packages:" 0 0 0 3>&1 1>&2 2>&3)
-  if [[ "x$unneeded" != "x" ]] ; then
+  if [ -n "$unneeded" ]
+  then
     cmd="sudo pacman -D --asdeps $unneeded"
     echo $cmd
     $cmd
   fi
 }
-
-# Set up prompt
-PS1='\[\e[0;34m\] \\ [\w]\n / \[\e[0m\]\$ '
 
 fortune -a

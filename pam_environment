@@ -1,0 +1,7 @@
+EDITOR=vim
+BROWSER=chromium
+
+CC=clang
+CXX=clang++
+CXXFLAGS=-std=c++11 -ggdb
+LD_LIBRARY_PATH=.
