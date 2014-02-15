@@ -104,6 +104,7 @@ hc set frame_border_width 1
 hc set window_border_width 0
 hc set window_border_inner_width 0
 hc set frame_gap 16
+hc set smart_frame_surroundings 1
 hc set window_gap 0
 hc set frame_padding 0
 hc set mouse_recenter_gap 0
@@ -120,10 +121,6 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 
 # multi monitor
 hc detect_monitors
-for i in $(seq 0 $(($(hc list_monitors | wc -l)-1)))
-do
-  hc pad $i "" "" 25 ""
-done
 
 # ready
 hc unlock
