@@ -1,11 +1,11 @@
 [Unit]
 Description=KDE Services
-Requires=X@.service
+Requires=X.service
+After=X.service
 
 [Service]
 Type=forking
 ExecStart=/usr/bin/kdeinit4
-Environment=DISPLAY=%I
 
 [Install]
-WantedBy=graphical@.target
+WantedBy=graphical.target

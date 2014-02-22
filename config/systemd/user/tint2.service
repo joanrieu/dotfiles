@@ -1,0 +1,11 @@
+[Unit]
+Description=tint2 panel/taskbar
+Requires=X.service
+After=X.service
+After=X-window-manager.service
+
+[Service]
+ExecStart=/usr/bin/tint2
+
+[Install]
+WantedBy=graphical.target

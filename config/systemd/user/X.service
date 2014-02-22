@@ -1,0 +1,10 @@
+[Unit]
+Description=X
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/xinit
+ExecStopPost=/usr/bin/systemctl --user unset-environment DISPLAY
+
+[Install]
+WantedBy=graphical.target

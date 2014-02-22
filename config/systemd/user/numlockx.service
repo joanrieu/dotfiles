@@ -1,11 +1,11 @@
 [Unit]
 Description=Keyboard NumLock
-Requires=X@.service
+Requires=X.service
+After=X.service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/numlockx
-Environment=DISPLAY=%I
 
 [Install]
-WantedBy=graphical@.target
+WantedBy=graphical.target

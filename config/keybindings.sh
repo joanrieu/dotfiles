@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function kb_logout() {
-  systemctl --user stop X@${DISPLAY}
+  systemctl --user stop X
 }
 
 function kb_shell() {

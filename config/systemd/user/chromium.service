@@ -1,0 +1,11 @@
+[Unit]
+Description=Chromium Background Service
+Requires=X.service
+After=X.service
+After=X-window-manager.service
+
+[Service]
+ExecStart=/usr/bin/chromium --no-startup-window
+
+[Install]
+WantedBy=graphical.target

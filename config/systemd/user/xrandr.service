@@ -1,13 +1,13 @@
 [Unit]
 Description=XRandR settings
-Requires=X@.service
-Before=X-window-manager@.service
+Requires=X.service
+After=X.service
+Before=X-window-manager.service
 
 [Service]
 Type=oneshot
 ExecStart=/usr/bin/xrandr --output DVI-0 --off --output DVI-1 --off --output HDMI-0 --off
 ExecStart=/usr/bin/xrandr --output DVI-0 --auto --output DVI-1 --auto --right-of DVI-0 --output HDMI-0 --auto --left-of DVI-0
-Environment=DISPLAY=%I
 
 [Install]
-WantedBy=graphical@.target
+WantedBy=graphical.target
