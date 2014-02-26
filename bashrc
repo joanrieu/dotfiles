@@ -35,12 +35,12 @@ fortune -a
 
 PS1=$(
   printf '\[\e[0;%dm\] \\ [\w]\n / \[\e[0m\]\$ ' $(
-    case "$(hostname)" in
+    case "$HOSTNAME" in
       bluethunder)
         echo 34
         ;;
       srv.fififox.net)
-        echo 31
+        echo 32
         ;;
       ssh)
         echo 31
