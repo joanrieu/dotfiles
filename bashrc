@@ -33,4 +33,21 @@ function pacman-clean-explicits {
 
 fortune -a
 
-PS1='\[\e[0;34m\] \\ [\w]\n / \[\e[0m\]\$ '
+PS1=$(
+  printf '\[\e[0;%dm\] \\ [\w]\n / \[\e[0m\]\$ ' $(
+    case "$(hostname)" in
+      bluethunder)
+        echo 34
+        ;;
+      srv.fififox.net)
+        echo 31
+        ;;
+      ssh)
+        echo 31
+        ;;
+      *)
+        echo 33
+        ;;
+    esac
+  )
+)
