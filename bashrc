@@ -1,9 +1,8 @@
+[ -z "${BYOBU_PREFIX}" ] && LC_BYOBU=1
 source /etc/profile
 
-[ -z "$PS1" ] && return || PS1='\[\e[0;34m\] \\ [\w]\n / \[\e[0m\]\$ '
-[ -z "$TMUX" ] && exec tmux new-session
+[ -z "$PS1" ] && return
 
-eval $(dircolors -b)
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias dir='ls -lha'
@@ -33,3 +32,5 @@ function pacman-clean-explicits {
 }
 
 fortune -a
+
+PS1='\[\e[0;34m\] \\ [\w]\n / \[\e[0m\]\$ '
