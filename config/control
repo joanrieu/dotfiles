@@ -1,0 +1,122 @@
+#!/bin/bash
+
+# ==== X ==== #
+
+function X-logout() {
+  systemctl --user stop X
+}
+
+function X-shell() {
+  termite &
+}
+
+function X-attach() {
+  tmux list-sessions | dmenu | egrep -o ^[0-9]+ | xargs echo tmux attach-session -t | xargs -0 termite -e &
+}
+
+function X-launcher() {
+  dmenu_run &
+}
+
+function X-keyboard() {
+  setxkbmap $(setxkbmap -query |awk -F: -e '/layout: +fr/ { print "us" } /layout: +us/ { print "fr" }')
+}
+
+function X-taskbar() {
+  if systemctl --user is-active tint2
+  then
+    systemctl --user stop tint2
+  else
+    systemctl --user start tint2
+  fi
+}
+
+# ==== Music ==== #
+
+function music-playpause() {
+  ncmpcpp play
+}
+
+function music-pause() {
+  ncmpcpp pause
+}
+
+function music-playpause() {
+  ncmpcpp toggle
+}
+
+function music-stop() {
+  ncmpcpp stop
+}
+
+function music-next() {
+  ncmpcpp next
+}
+
+function music-prev() {
+  ncmpcpp prev
+}
+
+MUSIC_VOLUME_STEP=50
+
+function music-raise() {
+  ncmpcpp volume +$MUSIC_VOLUME_STEP
+}
+
+function music-lower() {
+  ncmpcpp volume -$MUSIC_VOLUME_STEP
+}
+
+# ==== Audio ==== #
+
+AUDIO_VOLUME_STEP=10
+
+function audio-raise() {
+  ponymix increase -d speakers $AUDIO_VOLUME_STEP >/dev/null
+}
+
+function audio-lower() {
+  ponymix decrease -d speakers $AUDIO_VOLUME_STEP >/dev/null
+}
+
+function audio-get() {
+  ponymix defaults | awk '$1 == "sink" { print $3 }'
+}
+
+function audio-set() {
+  device=$1
+  skipped_devices=2
+  ponymix set-default -t sink -d $device
+  ponymix list-short -t sink-input | awk '$2 >= '$skipped_devices' { print "ponymix move -t sink-input -d "$2" '$device'" }' | sh
+}
+
+function audio-toggle() {
+  if [[ $(audio-get) == headphones ]]
+  then
+    device=speakers
+  else
+    device=headphones
+  fi
+  run audio set $device
+}
+
+# ==== $0 ==== #
+
+function run() {
+  command=$1
+  shift
+  while [[ $(type -t $command) != function ]]
+  do
+    if [ $# -gt 0 ]
+    then
+      command="${command}-${1}"
+      shift
+    else
+      echo error: bad command: $command >&2
+      exit 1
+    fi
+  done
+  $command "$@"
+}
+
+run "$@"

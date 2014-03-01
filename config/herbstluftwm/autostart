@@ -18,29 +18,29 @@ hc keybind $Mod-Shift-c close
 function kb() {
   key=$1
   shift
-  hc keybind $key spawn ~/.config/keybindings.sh $*
+  hc keybind $key spawn ~/.config/control "$@"
 }
 
 kb $Mod-Shift-e logout
 
-kb $Mod-Return shell
-kb $Mod-Shift-Return shell_attach
+kb $Mod-Return X shell
+kb $Mod-Shift-Return X attach
 
-kb $Mod-d launcher
-kb $Mod-Pause taskbar_toggle
-kb $Mod-Shift-Pause keyboard_layout_toggle
+kb $Mod-d X launcher
+kb $Mod-Pause X taskbar
+kb $Mod-Shift-Pause X keyboard
 
-kb XF86AudioPlay music_playpause
-kb Control-XF86AudioPlay music_stop
-kb XF86AudioNext music_next
-kb XF86AudioPrev music_prev
-kb Control-XF86AudioRaiseVolume music_raise
-kb Control-XF86AudioLowerVolume music_lower
+kb XF86AudioPlay music playpause
+kb Control-XF86AudioPlay music stop
+kb XF86AudioNext music next
+kb XF86AudioPrev music prev
+kb Control-XF86AudioRaiseVolume music raise
+kb Control-XF86AudioLowerVolume music lower
 
-kb XF86AudioRaiseVolume audio_raise
-kb XF86AudioLowerVolume audio_lower
-kb XF86AudioMute audio_output_toggle
-kb Control-XF86AudioMute audio_output_headphones
+kb XF86AudioRaiseVolume audio raise
+kb XF86AudioLowerVolume audio lower
+kb XF86AudioMute audio toggle
+kb Control-XF86AudioMute audio set headphones
 
 # tags
 TAG_NAMES=( {1..9} )
