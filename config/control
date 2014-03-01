@@ -21,11 +21,15 @@ function X-logout() {
 }
 
 function X-shell() {
-  termite &
+  termite
 }
 
 function X-attach() {
-  tmux list-sessions | dmenu | egrep -o ^[0-9]+ | xargs echo tmux attach-session -t | xargs -0 termite -e &
+  format='#{?session_attached,[,}#{session_name}#{?session_attached,],}'
+  if session=$(tmux list-sessions -F "$format" | dmenu | egrep -o [0-9]+)
+  then
+    termite -e "tmux attach-session -t $session"
+  fi
 }
 
 function X-launcher() {
