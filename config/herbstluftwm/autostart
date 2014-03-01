@@ -21,7 +21,7 @@ function kb() {
   hc keybind $key spawn ~/.config/control "$@"
 }
 
-kb $Mod-Shift-e logout
+kb $Mod-Shift-e X logout
 
 kb $Mod-Return X shell
 kb $Mod-Shift-Return X attach
