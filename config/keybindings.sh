@@ -45,35 +45,39 @@ function kb_music_prev() {
   ncmpcpp prev
 }
 
-MUSIC_STEP=50
+MUSIC_VOLUME_STEP=50
 
 function kb_music_raise() {
-  ncmpcpp volume +$MUSIC_STEP
+  ncmpcpp volume +$MUSIC_VOLUME_STEP
 }
 
 function kb_music_lower() {
-  ncmpcpp volume -$MUSIC_STEP
+  ncmpcpp volume -$MUSIC_VOLUME_STEP
 }
 
-AUDIO_STEP=4
+AUDIO_VOLUME_STEP=4
 
 function kb_audio_raise() {
-  ~/.config/pulse/set-volume-relative.sh +$AUDIO_STEP
+  ponymix increase -d speakers $AUDIO_VOLUME_STEP
 }
 
 function kb_audio_lower() {
-  ~/.config/pulse/set-volume-relative.sh -$AUDIO_STEP
+  ponymix decrease -d speakers $AUDIO_VOLUME_STEP
+}
+
+function audio_is_headphones() {
+  [[ $(ponymix defaults | awk '/^sink / { print $3 }') == "headphones" ]]
 }
 
 function kb_audio_output_toggle() {
-  ~/.config/pulse/switch-sink.sh
+  audio_is_headphones && device="speakers" || device="headphones"
+  ponymix set-default -t sink -d $device
+  skipped_devices=2
+  ponymix list-short -t sink-input | awk '$2 >= '$skipped_devices' { print "ponymix move -t sink-input -d "$2" '$device'" }' | sh
 }
 
 function kb_audio_output_headphones() {
-  if [[ $(pacmd stat | awk -F': ' '$1 == "Default sink name" { print $2 }' ) != 'headphones' ]]
-  then
-    ~/.config/pulse/switch-sink.sh
-  fi
+  audio_is_headphones || kb_audio_output_toggle
 }
 
 "kb_$@"
