@@ -8,10 +8,6 @@ alias grep='grep --color=auto'
 alias dir='ls -lha'
 alias rm='rm -I'
 
-function xs {
-  systemctl --user start graphical.target
-}
-
 function mkcd {
   mkdir "$@" && cd "$@"
 }

@@ -1,9 +1,23 @@
 #!/bin/bash
 
+# ==== systemd ==== #
+
+function sd() {
+  systemctl --user "$@"
+}
+
+function ps() {
+  loginctl user-status $(whoami)
+}
+
 # ==== X ==== #
 
+function X-login() {
+  sd start graphical.target
+}
+
 function X-logout() {
-  systemctl --user stop X
+  sd stop X
 }
 
 function X-shell() {
@@ -97,7 +111,7 @@ function audio-toggle() {
   else
     device=headphones
   fi
-  run audio set $device
+  audio set $device
 }
 
 # ==== $0 ==== #
