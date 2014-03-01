@@ -4,5 +4,5 @@
 [core]
 	editor = vim
 [alias]
-  l = log --oneline --graph --decorate --all --date-order
-  st = status
+	l = log --oneline --graph --decorate --all --date-order
+	st = status

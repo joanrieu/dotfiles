@@ -37,11 +37,11 @@ function X-keyboard() {
 }
 
 function X-taskbar() {
-  if systemctl --user is-active tint2
+  if sd is-active tint2
   then
-    systemctl --user stop tint2
+    sd stop tint2
   else
-    systemctl --user start tint2
+    sd start tint2
   fi
 }
 
@@ -86,11 +86,11 @@ function music-lower() {
 AUDIO_VOLUME_STEP=10
 
 function audio-raise() {
-  ponymix increase -d speakers $AUDIO_VOLUME_STEP >/dev/null
+  ponymix increase -t sink -d speakers $AUDIO_VOLUME_STEP >/dev/null
 }
 
 function audio-lower() {
-  ponymix decrease -d speakers $AUDIO_VOLUME_STEP >/dev/null
+  ponymix decrease -t sink -d speakers $AUDIO_VOLUME_STEP >/dev/null
 }
 
 function audio-get() {
@@ -101,7 +101,7 @@ function audio-set() {
   device=$1
   skipped_devices=2
   ponymix set-default -t sink -d $device
-  ponymix list-short -t sink-input | awk '$2 >= '$skipped_devices' { print "ponymix move -t sink-input -d "$2" '$device'" }' | sh
+  $(ponymix list-short -t sink-input | awk '$2 >= '$skipped_devices' { print "ponymix move -t sink-input -d "$2" '$device'" }')
 }
 
 function audio-toggle() {
@@ -111,7 +111,7 @@ function audio-toggle() {
   else
     device=headphones
   fi
-  audio set $device
+  audio-set $device
 }
 
 # ==== $0 ==== #
