@@ -75,6 +75,14 @@ function music-prev() {
   ncmpcpp prev
 }
 
+function music-choose() {
+  if folder=$(ls ~/music | dmenu -i -p "$(ncmpcpp --now-playing)") &&
+    music=$(mpc listall "$folder" | dmenu -i -l 20 -p 'Add to playlist')
+  then
+    mpc add "$music"
+  fi
+}
+
 MUSIC_VOLUME_STEP=50
 
 function music-raise() {

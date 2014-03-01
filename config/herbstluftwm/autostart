@@ -32,6 +32,7 @@ kb $Mod-Shift-Pause X keyboard
 
 kb XF86AudioPlay music playpause
 kb Control-XF86AudioPlay music stop
+kb $Mod-XF86AudioPlay music choose
 kb XF86AudioNext music next
 kb XF86AudioPrev music prev
 kb Control-XF86AudioRaiseVolume music raise
