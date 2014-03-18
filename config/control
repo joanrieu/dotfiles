@@ -10,6 +10,39 @@ function ps() {
   loginctl user-status $(whoami)
 }
 
+# ==== console ==== #
+
+function console-attach() {
+  if [ $(tmux list-sessions | wc -l) -gt 0 ]
+  then
+    exec tmux attach-session
+  else
+    exec tmux
+  fi
+}
+
+function console-map-host {
+  case "$HOSTNAME" in
+    bluethunder)
+      echo $1;;
+    srv.fififox.net)
+      echo $2;;
+    ssh)
+      echo $3;;
+    *)
+      echo $3;;
+  esac
+}
+
+function console-setup-colors {
+  # echo the value of PS1
+  printf '\[\e[0;%dm\] \\ [\w]\n / \[\e[0m\]\$ ' \
+    $(~/.config/control console-map-host 34 32 31 33)
+  exec >/dev/null
+  tmux set status-bg \
+    $(~/.config/control console-map-host blue green red yellow)
+}
+
 # ==== X ==== #
 
 function X-login() {
@@ -24,9 +57,10 @@ function X-shell() {
   termite
 }
 
+
+
 function X-attach() {
-  format='#{?session_attached,[,}#{session_name}#{?session_attached,],}'
-  if session=$(tmux list-sessions -F "$format" | dmenu | egrep -o [0-9]+)
+  if session=$(tmux list-sessions -F "#{?session_attached,[,}#{session_name}#{?session_attached,],}" | dmenu | egrep -o [0-9]+)
   then
     termite -e "tmux attach-session -t $session"
   fi
@@ -124,6 +158,23 @@ function audio-toggle() {
     device=headphones
   fi
   audio-set $device
+}
+
+# ==== pacman ==== #
+
+function pacman-find-disowned-files {
+  ( sudo find / -not -type d ; (pacman -Qql | egrep -v '/$') ) | sort | uniq -u | egrep -v '^/(home|sys|proc|dev)' | less
+}
+
+function pacman-clean-explicits {
+  explicits=$(comm -23 <(pacman -Qqe | sort) <(pacman -Sqg base base-devel | sort))
+  unneeded=$(LC_ALL=C pacman -Qi $explicits |sed -nre 's/^Name +: (.+)$/\1/p' -e 's/^Description +: (.+)$/\1\noff/p' |xargs -d"\n" dialog --checklist "Select unneeded packages:" 0 0 0 3>&1 1>&2 2>&3)
+  if [ -n "$unneeded" ]
+  then
+    cmd="sudo pacman -D --asdeps $unneeded"
+    echo $cmd
+    $cmd
+  fi
 }
 
 # ==== $0 ==== #
