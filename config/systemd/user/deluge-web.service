@@ -1,0 +1,10 @@
+[Unit]
+Description=Deluge BitTorrent client web interface
+Requires=deluged.service
+After=deluged.service
+
+[Service]
+ExecStart=/usr/bin/deluge -u web
+
+[Install]
+WantedBy=default.target
