@@ -1,10 +1,4 @@
+.include /usr/lib/systemd/user/mpd.service
+
 [Unit]
-Description=Music Player Daemon
-Wants=sound.target
-After=sound.target
-
-[Service]
-ExecStart=/usr/bin/mpd --no-daemon
-
-[Install]
-WantedBy=default.target
+Wants=pulseaudio.service
