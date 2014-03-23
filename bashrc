@@ -6,6 +6,7 @@ alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias dir='ls -lha'
 alias rm='rm -I'
+alias dcc='~/.config/control'
 
 function mkcd {
   mkdir "$@" && cd "$@"
