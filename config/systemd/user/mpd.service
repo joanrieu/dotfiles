@@ -1,4 +1,0 @@
-.include /usr/lib/systemd/user/mpd.service
-
-[Unit]
-Wants=pulseaudio.service
