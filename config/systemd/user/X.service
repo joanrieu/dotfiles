@@ -3,7 +3,7 @@ Description=X
 
 [Service]
 Type=notify
-ExecStart=/usr/bin/xinit
+ExecStart=/usr/bin/xinit -- vt${XDG_VTNR}
 ExecStopPost=/usr/bin/systemctl --user unset-environment DISPLAY
 
 [Install]

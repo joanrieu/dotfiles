@@ -46,7 +46,9 @@ function console-setup-colors {
 # ==== X ==== #
 
 function X-login() {
+  sd set-environment XDG_VTNR=$XDG_VTNR
   sd start graphical.target
+  sd unset-environment XDG_VTNR
 }
 
 function X-logout() {
@@ -56,8 +58,6 @@ function X-logout() {
 function X-shell() {
   termite
 }
-
-
 
 function X-attach() {
   if session=$(tmux list-sessions -F "#{?session_attached,[,}#{session_name}#{?session_attached,],}" | dmenu | egrep -o [0-9]+)
