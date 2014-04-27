@@ -1,0 +1,8 @@
+[Unit]
+Description=VPN over SSH
+
+[Service]
+ExecStart=/usr/bin/sshuttle -vr jrieu@srv.fififox.net 0/0 --no-latency-control
+
+[Install]
+WantedBy=default.target
