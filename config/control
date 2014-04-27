@@ -132,11 +132,11 @@ function music-lower() {
 AUDIO_VOLUME_STEP=10
 
 function audio-raise() {
-  ponymix increase -t sink -d speakers $AUDIO_VOLUME_STEP >/dev/null
+  ponymix increase $AUDIO_VOLUME_STEP >/dev/null
 }
 
 function audio-lower() {
-  ponymix decrease -t sink -d speakers $AUDIO_VOLUME_STEP >/dev/null
+  ponymix decrease $AUDIO_VOLUME_STEP >/dev/null
 }
 
 function audio-get() {
