@@ -147,7 +147,7 @@ function audio-set() {
   device=$1
   skipped_devices=2
   ponymix set-default -t sink -d $device
-  $(ponymix list-short -t sink-input | awk '$2 >= '$skipped_devices' { print "ponymix move -t sink-input -d "$2" '$device'" }')
+  ponymix list-short -t sink-input | awk '$2 >= '$skipped_devices' { print "ponymix move -t sink-input -d "$2" '$device'\n" }' | sh
 }
 
 function audio-toggle() {
