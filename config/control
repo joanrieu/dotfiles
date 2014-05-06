@@ -13,7 +13,7 @@ function ps() {
 # ==== console ==== #
 
 function console-attach() {
-  if [[ ${TERM%%-*} != xterm ]] && tmux has-session
+  if [[ -z $DISPLAY ]] && tmux has-session
   then
     exec tmux attach-session
   else
