@@ -5,6 +5,7 @@ Description=X
 Type=notify
 ExecStart=/usr/bin/xinit -- vt${XDG_VTNR}
 ExecStopPost=/usr/bin/systemctl --user unset-environment DISPLAY
+SuccessExitStatus=1
 
 [Install]
 WantedBy=graphical.target
