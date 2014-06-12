@@ -2,7 +2,7 @@
 Description=SSH Tunnel
 
 [Service]
-ExecStart=/usr/bin/autossh -M 0 -vNR 2222:localhost:22 -o "ServerAliveInterval 45" -o "ServerAliveCountMax 2" jrieu@srv.fififox.net
+ExecStart=/usr/bin/autossh -M 0 -vNR 2222:localhost:22 -o "ServerAliveInterval 10" -o "ServerAliveCountMax 1" jrieu@srv.fififox.net
 
 [Install]
 WantedBy=default.target
