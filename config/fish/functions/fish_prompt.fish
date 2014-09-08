@@ -1,0 +1,1 @@
+/usr/share/fish/tools/web_config/sample_prompts/classic_git.fish
