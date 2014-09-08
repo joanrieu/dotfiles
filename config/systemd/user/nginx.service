@@ -1,0 +1,14 @@
+[Unit]
+ConditionPathIsMountPoint=%h/crypt
+Description=A high performance web server and a reverse proxy server
+
+[Service]
+Type=forking
+PIDFile=%h/.config/nginx/pid
+ExecStart=/usr/bin/nginx -c %h/.config/nginx/conf
+ExecReload=/usr/bin/kill -HUP $MAINPID
+KillSignal=SIGQUIT
+KillMode=mixed
+
+[Install]
+WantedBy=default.target
