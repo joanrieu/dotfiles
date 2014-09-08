@@ -1,3 +1,5 @@
 #!/bin/sh
 
-systemctl --user set-environment DISPLAY="$DISPLAY"
+RUN="systemd-run --user --scope"
+
+exec $RUN enlightenment_start
