@@ -6,3 +6,5 @@
 [alias]
 	l = log --oneline --graph --decorate --all --date-order
 	st = status
+[color]
+	ui = auto
