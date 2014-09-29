@@ -1,0 +1,7 @@
+[Unit]
+Description=Xorg X Server
+
+[Service]
+ExecStart=/usr/bin/startx
+ExecStop=/usr/bin/pkill --parent=${MAINPID} --oldest X
+SuccessExitStatus=1
