@@ -8,3 +8,5 @@
 	st = status
 [color]
 	ui = auto
+[push]
+	default = simple
