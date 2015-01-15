@@ -7,7 +7,7 @@ After=php-cgi.service
 [Service]
 Type=forking
 PIDFile=%h/.config/nginx/pid
-ExecStart=/usr/bin/nginx -c %h/.config/nginx/conf
+ExecStart=/usr/bin/nginx -c %h/.config/nginx/nginx.conf
 ExecReload=/usr/bin/kill -HUP $MAINPID
 KillSignal=SIGQUIT
 KillMode=mixed
