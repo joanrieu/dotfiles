@@ -1,13 +1,6 @@
 source /etc/profile
 [ -z "$PS1" ] && return
+[ -z "$TMUX" ] || exec fish
 
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
-alias dir='ls -lha'
-alias rm='rm -I'
-
-function mkcd {
-  mkdir "$@" && cd "$@"
-}
-
+alias f='exec fish'
 fortune -a
