@@ -1,6 +1,8 @@
 [Unit]
 ConditionPathIsMountPoint=%h/crypt
 Description=A high performance web server and a reverse proxy server
+Wants=php-cgi.service
+After=php-cgi.service
 
 [Service]
 Type=forking

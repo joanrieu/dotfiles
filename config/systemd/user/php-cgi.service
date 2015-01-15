@@ -1,0 +1,9 @@
+[Unit]
+ConditionPathIsMountPoint=%h/crypt
+Description=CGI and FCGI SAPI for PHP
+
+[Service]
+ExecStart=/usr/bin/php-cgi -b %h/.config/nginx/php.sock
+
+[Install]
+WantedBy=default.target
