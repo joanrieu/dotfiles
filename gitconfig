@@ -3,10 +3,11 @@
 	email = joan.rieu@gmail.com
 [core]
 	editor = vim
-[alias]
-	l = log --oneline --graph --decorate --all --date-order
-	st = status
 [color]
 	ui = auto
 [push]
 	default = simple
+[alias]
+	dc = diff --cached
+	ll = log --oneline --graph --all --decorate --date-order
+	st = status
